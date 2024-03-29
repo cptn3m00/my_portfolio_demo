@@ -1,0 +1,373 @@
+*,
+*:before,
+*::after{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+    color: #fff;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(proj_photo/cover.JPEG);
+    background-size:cover ;
+    background-position: center;
+    
+}
+.container{
+    padding: 10px 10%;
+}
+nav{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* .logo{
+    width: 01%;
+} */
+nav,
+ul,
+li{
+    display: inline-block;
+    list-style: none;
+    margin: 15px 20px;
+}
+nav
+ul
+li a{
+    color: #f0efec;
+    text-decoration: none;
+    font-size: 160%;
+    position: relative;
+    /* font-style: ; */
+    font-weight: 400;
+}
+nav
+ul
+li a::after{
+    content:'' ;
+    width: 0%;
+    height: 3px;
+    background: #c95913;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+nav,
+ul,
+li a:hover::after{
+    width: 100%;
+}
+.header_text{
+    margin-top: 8% ;
+    font-size: 30px;
+}
+.header_text h1{
+    font-size: 50px;
+    font-style: bold;
+    margin-top: 2% ;
+}
+.header_text h1 span {
+    width: 100%;
+    height: 0;
+    font-size: 54px;
+    font-style: italic;
+    color: #ed9f05;
+    transition: opacity 0.3s, transform 0.3s ease-in-out;
+  }
+  
+  .header_text h1:hover .hover_name {
+    opacity: 0.8  Reduce opacity;
+    transform: scale(1.05); 
+  }
+  
+  
+
+/* <-- --------about-------- --> */
+#about{
+    padding: 30px 0% ;
+    color: rgb(235, 239, 242);
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 30%;
+}
+.about-col-1 img{
+    width: 140%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 50%;
+}
+.sub-title{
+    font-size: 50px ;
+    font-weight: 500;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 30px;
+
+
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer ;
+    position: relative;
+
+}
+.tab-links::after{
+    content: ' ';
+    width: 0;
+    height: 3px;
+    background: #165b86;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+
+}
+/* .tab-links.active-link:hover::after{
+    width: 60%;
+} "turned this off bcz no hover was neccessary in this. It is done by js here" */   
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    margin-left: -18px;
+    list-style: none;
+
+}
+.tab-contents ul li span{
+    color: #ed9f05;
+    font-size: 18px;
+}
+.tab-contents{
+    display: none;
+    /* opacity: 0; */
+    /* transition: opacity 0.5s ease-in-out; */
+    
+}
+
+.tab-contents.active-tab {
+    display: block;
+    animation: unfoldContent 0.5s ease-in-out forwards; /* New animation definition */
+}
+@keyframes unfoldContent {
+    from { opacity: 0; transform: translateX(-20px); } /* Start hidden and slightly shifted down */
+    to { opacity: 1; transform: translateX(0); } /* End fully visible and in original position */
+}
+
+  /* ----------Services----------- */
+
+#Services{
+    padding: 30px 0;
+}
+
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s ;
+}
+.services-list div i{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none; 
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background: #165b86;
+    transform: translateY(-10px);
+}
+
+#Portfolio{
+    padding: 30px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 15px;
+    transition: transform 0.5s;
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgb(0,0,0,0.6), #0b0104);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 30px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+.layer span{
+    margin-top: 12px;
+    color: #ed9f05;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1,1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 40px auto;
+    width: fit-content;
+    font-size: 35px;
+    border: 1px solid #e8e1e8;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+    
+}
+.btn:hover{
+    background: #9274e6;
+
+}
+/* ---------contact---------- */
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 50%;
+}
+
+.contact-left p span{
+    color: #ed9f05;
+    margin-right: 5px;
+    font-size: 25px;
+}
+
+.social-icons{
+    margin-top: 20px;
+}
+.social-icons span{
+    color: #ed9f05;
+    margin-top: 2px;
+    margin-right: 5px;
+    font-size: 50px;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons span:hover{
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    font-size: 25px;
+    display: inline-block;
+    background: #ed9f05;
+}
+
+.contact-right form {
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #302e30;
+    padding: 15px;
+    margin: 15px 0;
+    font: 15px;
+    border-radius: 5px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #292827;
+    font-weight: 300;
+    margin-top: 20%s;
+
+}
+.copyright p span{
+    color: red;
+}
+
+/* -------------CSS for small screen--------- */
+
+@media only screen and (max-width: 800px){
+    #header{
+        background-image: url(proj_photo/Cover.JPEG);
+        background-size: cover;
+    }
+}
+  
+
+
